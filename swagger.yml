@@ -1,0 +1,114 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /wallets:
+    get:
+      operationId: wallet.read_all
+      tags:
+        - Wallets
+      summary: Read the entire db of wallets
+      description: Read the db of wallets
+      responses:
+        200:
+          description: Successfully read wallet list operation
+          schema:
+            type: array
+            items:
+              properties:
+                Id:
+                  type: integer
+                  description: Id of the wallet
+                WalletTitle:
+                  type: string
+                  description: Title of the wallet
+                WalletNick:
+                  type: string
+                  description: NickName of the wallet
+                PublicKey:
+                  type: string
+                  description: Public Key of the wallet
+                Memo:
+                  type: string
+                  description: Origin of wallet details
+           
+  /wallets/{pubkey}:
+    get:
+      operationId: wallet.read_key
+      tags:
+        - Wallets
+      summary: Read one wallet from the NamedWallet db
+      description: Read one wallet from the NamedWallet db
+      parameters:
+        - name: pubkey
+          in: path
+          description: public key of the Wallet to get from the db
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read wallet information from db
+          schema:
+            type: object
+            properties:
+              Id:
+                type: integer
+                description: Id of the wallet
+              WalletTitle:
+                type: string
+                description: Title of the wallet
+              WalletNick:
+                type: string
+                description: NickName of the wallet
+              PublicKey:
+                type: string
+                description: Public Key of the wallet
+              Memo:
+                type: string
+                description: Origin of wallet details
+
+  /wallets/title/{title}:
+    get:
+      operationId: wallet.read_title
+      tags:
+        - Wallets
+      summary: Read all titles from the NamedWallet db
+      description: Read all titles from the NamedWallet db
+      parameters:
+        - name: title
+          in: path
+          description: title of the Wallets to get from the db
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read titles from db
+          schema:
+            type: array
+            items:
+              properties:
+                Id:
+                  type: integer
+                  description: Id of the wallet
+                WalletTitle:
+                  type: string
+                  description: Title of the wallet
+                WalletNick:
+                  type: string
+                  description: NickName of the wallet
+                PublicKey:
+                  type: string
+                  description: Public Key of the wallet
+                Memo:
+                  type: string
+                  description: Origin of wallet details
