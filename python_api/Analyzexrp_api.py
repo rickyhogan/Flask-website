@@ -18,7 +18,7 @@ def print_all_wallets():
     except Exception as err:
         return {"status": "error", "error": err}
 
-def print_all_title(title):
+def print_from_title(title):
     url = _url('/wallets/title/' + title)
     request = Request(method='GET', url=url)
     try:
@@ -31,7 +31,7 @@ def print_all_title(title):
     except Exception as err:
         return {"status": "error", "error": err}
 
-def print_single_wallet(pubkey):
+def print_from_key(pubkey):
     url = _url('/wallets/' + pubkey)
     request = Request(method='GET', url=url)
     try:
