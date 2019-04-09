@@ -1,7 +1,7 @@
 # Flask-website
 Complete website and API for AnalyzeXRP server
 
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt into new virtualenv
 
 complete running server in dev. mode for API access and website testing.
 
