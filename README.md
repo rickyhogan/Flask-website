@@ -3,7 +3,12 @@ Complete website and API for AnalyzeXRP server
 
 pip3 install -r requirements.txt into new virtualenv
 
-complete running server in dev. mode for API access and website testing.
+This is a complete running server in dev. mode for API access and website testing.
+NamedWallets is the DB with SQlite containing our wallets and there title/nicknames.
+
+after all files inside directory, cd ~/Flask_Site
+from terminal, python3 server.py
+
 
 open firefox
 type into field ' http://0.0.0.0:5000/ '
